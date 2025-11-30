@@ -1,0 +1,207 @@
+{
+  "main": {
+    "id": "0d33e3250dcce653",
+    "type": "split",
+    "children": [
+      {
+        "id": "342f69612a35384f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e716a8e57141a8e5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MALWARE API"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f6a0b272c6d5e351",
+    "type": "split",
+    "children": [
+      {
+        "id": "050962f19d2313ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "70d5083a119821f5",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "8e9effb139eb9fb5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0e6813c062f39090",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "7640d05fa2da4061",
+    "type": "split",
+    "children": [
+      {
+        "id": "81aa1cafdd8c67f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dd0783ff32e9d8ca",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "THM/RE/INTRO.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for INTRO"
+            }
+          },
+          {
+            "id": "854ad24de9a0f56d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "THM/RE/INTRO.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from INTRO"
+            }
+          },
+          {
+            "id": "b6bf25da74e088c1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "b54d3f253a5ca783",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "e0cc0e3dcb8f1d52",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "THM/RE/INTRO.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of INTRO"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "e716a8e57141a8e5",
+  "lastOpenFiles": [
+    "HTB/RE/SIMPLE ENCRYPTOR/WRITEUP.md",
+    "Welcome.md",
+    "HTB/RE",
+    "HTB/RE/SIMPLE ENCRYPTOR",
+    "MALWARE BABY/STATIC ANALYSIS/PROCESS INJECTION.md",
+    "MALWARE BABY/STATIC ANALYSIS/ADVANCED STATIC ANA.md",
+    "MALWARE BABY/STATIC ANALYSIS/MD5 CHECK.md",
+    "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
+    "MALWARE BABY/STATIC ANALYSIS/WINDOWS API.md",
+    "MALWARE BABY/STATIC ANALYSIS/PE HEADERS.md",
+    "MALWARE BABY/STATIC ANALYSIS/STRINGS.md",
+    "MALWARE BABY/STATIC ANALYSIS/SHA256 CHECK.md",
+    "THM/RE/INTRO.md",
+    "MALWARE BABY/STATIC ANALYSIS",
+    "MALWARE BABY",
+    "THM/RE",
+    "HTB",
+    "THM"
+  ]
+}
