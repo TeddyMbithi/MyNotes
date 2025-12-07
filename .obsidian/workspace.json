@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
+                "file": "HTB/SHERLOCKS/SECRETPICTURES.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MALWARE API"
+              "title": "SECRETPICTURES"
             }
           }
         ]
@@ -185,6 +185,17 @@
   },
   "active": "e716a8e57141a8e5",
   "lastOpenFiles": [
+    "Pasted image 20251207200950.png",
+    "Pasted image 20251207195119.png",
+    "Pasted image 20251207192742.png",
+    "Pasted image 20251207192706.png",
+    "Pasted image 20251207192649.png",
+    "Pasted image 20251207192219.png",
+    "Pasted image 20251207191613.png",
+    "Pasted image 20251130123136.png",
+    "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
+    "HTB/SHERLOCKS/SECRETPICTURES.md",
+    "HTB/SHERLOCKS",
     "HTB/RE/SIMPLE ENCRYPTOR/WRITEUP.md",
     "Welcome.md",
     "HTB/RE",
@@ -192,7 +203,6 @@
     "MALWARE BABY/STATIC ANALYSIS/PROCESS INJECTION.md",
     "MALWARE BABY/STATIC ANALYSIS/ADVANCED STATIC ANA.md",
     "MALWARE BABY/STATIC ANALYSIS/MD5 CHECK.md",
-    "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
     "MALWARE BABY/STATIC ANALYSIS/WINDOWS API.md",
     "MALWARE BABY/STATIC ANALYSIS/PE HEADERS.md",
     "MALWARE BABY/STATIC ANALYSIS/STRINGS.md",
