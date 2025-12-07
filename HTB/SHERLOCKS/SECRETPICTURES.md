@@ -1,28 +1,61 @@
--  Loading up the binary in Cutter, we get this overview:
-![Pasted image 20251130123136](../../Pasted%20image%2020251130123136.png)
+# Malware Analysis Report: SecretPictures
 
--  We immediately answer Task 1 and Task 2
-		- What is the MD5 hash of the malware? fd46d178474f32f596641ff0f7bb337e
-		- What programming language is used to write the malware? GOLANG
-- Loading the file into ANY.RUN, ![Pasted image 20251207191613](../../Pasted%20image%2020251207191613.png)
+## 1. Executive Summary
+This report details the static and dynamic analysis of a suspicious binary. The analysis confirms the file is a malware sample written in **Go (Golang)**. It exhibits typical persistence mechanisms by modifying the Windows Registry, attempts to evade detection by copying itself to a hidden directory, and initiates network connections to a known malicious domain.
 
-- From the AI summary, we get the Solution to task 3: ## What is the name of the folder the malware copies itself to after the initial run? Systemlogs
-- Task 4 is to identify:
-		- ## What registry key does the malware modify to achieve persistence?   
-      HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
-		- ![Pasted image 20251207192219](../../Pasted%20image%2020251207192219.png) Add HealthCheck at the end for it name
-		- ![Pasted image 20251207192706](../../Pasted%20image%2020251207192706.png)
-- Task 5 is ## What FQDN does the malware attempt to connect to?
-	- ![Pasted image 20251207192742](../../Pasted%20image%2020251207192742.png)
-	- its malware.invalid.com
-- Task 6 is Which Windows API function does the malware call to check drive types?
-	- ### **Using a PE analysis tool (e.g., PEiD, PEview, CFF Explorer)**
+## 2. File Identification
+Initial static analysis was performed to identify the file's properties and compilation language.
 
-	Look under: - **Import Table → Kernel32.dll**
-    If you see **`GetDriveTypeA`** or **`GetDriveTypeW`**, that confirms the malware imports it.
-	    In this case its GetDriveType.
-	Thank you for Reading
+*   **MD5 Hash**: `fd46d178474f32f596641ff0f7bb337e`
+*   **Programming Language**: `GOLANG`
 
-	![[Pasted image 20251207200950.png]]
+**Static Analysis Overview (Cutter):**
+![Static Analysis Overview](../../Pasted%20image%2020251130123136.png)
+
+## 3. Static Analysis
+Further inspection of the binary's imports revealed specific API calls used for system reconnaissance.
+
+### API Imports
+The malware imports functions from `Kernel32.dll` to interact with the file system. Specifically, it utilizes **`GetDriveType`** (likely `GetDriveTypeA` or `GetDriveTypeW`) to enumerate and check the types of drives connected to the system.
+
+![Import Analysis](../../Pasted%20image%2020251207200950.png)
+
+## 4. Dynamic Analysis
+Dynamic analysis was conducted using ANY.RUN to observe the malware's behavior in a controlled environment.
+
+![ANY.RUN Analysis](../../Pasted%20image%2020251207191613.png)
+
+### File System Artifacts
+Upon execution, the malware copies itself to a specific directory to establish a foothold.
+*   **Dropped Folder**: `Systemlogs`
+
+### Persistence Mechanism
+To ensure it runs automatically upon system reboot, the malware modifies the Windows Registry.
+*   **Registry Key**: `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run`
+*   **Value Name**: `HealthCheck`
+
+**Registry Modification Evidence:**
+![Registry Key Modification](../../Pasted%20image%2020251207192219.png)
+![Persistence Entry](../../Pasted%20image%2020251207192706.png)
+
+### Network Activity
+The malware attempts to establish a connection to a remote command and control (C2) server.
+*   **FQDN**: `malware.invalid.com`
+
+**Network Traffic Analysis:**
+![Network Connection](../../Pasted%20image%2020251207192742.png)
+
+## 5. Indicators of Compromise (IOCs)
+
+| Type | Value |
+|------|-------|
+| **MD5** | `fd46d178474f32f596641ff0f7bb337e` |
+| **Domain** | `malware.invalid.com` |
+| **File Path** | `Systemlogs` (Directory) |
+| **Registry Key** | `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Run` |
+| **Registry Value** | `HealthCheck` |
+
+---
+*Analysis generated on December 7, 2025.*
 
 
