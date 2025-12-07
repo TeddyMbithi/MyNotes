@@ -11,14 +11,17 @@
             "id": "e716a8e57141a8e5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "HTB/SHERLOCKS/SECRETPICTURES.md",
-                "mode": "source",
-                "source": false
+                "file": "Untitled.canvas",
+                "viewState": {
+                  "x": 0,
+                  "y": 0,
+                  "zoom": 0
+                }
               },
-              "icon": "lucide-file",
-              "title": "SECRETPICTURES"
+              "icon": "lucide-layout-dashboard",
+              "title": "Untitled"
             }
           }
         ]
@@ -185,6 +188,8 @@
   },
   "active": "e716a8e57141a8e5",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "HTB/SHERLOCKS/SECRETPICTURES.md",
     "Pasted image 20251207200950.png",
     "Pasted image 20251207195119.png",
     "Pasted image 20251207192742.png",
@@ -194,7 +199,6 @@
     "Pasted image 20251207191613.png",
     "Pasted image 20251130123136.png",
     "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
-    "HTB/SHERLOCKS/SECRETPICTURES.md",
     "HTB/SHERLOCKS",
     "HTB/RE/SIMPLE ENCRYPTOR/WRITEUP.md",
     "Welcome.md",
