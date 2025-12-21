@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "HTB/SHERLOCKS/SECRETPICTURES.md",
+                "file": "RE/BINARY EXPLOITATION/PWNDBG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SECRETPICTURES"
+              "title": "PWNDBG"
             }
           }
         ]
@@ -186,8 +186,14 @@
   },
   "active": "e716a8e57141a8e5",
   "lastOpenFiles": [
-    "Untitled.canvas",
+    "RE/BINARY EXPLOITATION/LTRACE(strace).md",
+    "RE/BINARY EXPLOITATION/INTRO TO BUFFER OVERFLOWS.md",
+    "RE/BINARY EXPLOITATION/STACK.md",
+    "RE/BINARY EXPLOITATION/PWNDBG.md",
     "HTB/SHERLOCKS/SECRETPICTURES.md",
+    "RE/BINARY EXPLOITATION",
+    "RE",
+    "Untitled.canvas",
     "Pasted image 20251207200950.png",
     "Pasted image 20251207195119.png",
     "Pasted image 20251207192742.png",

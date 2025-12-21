@@ -18,7 +18,7 @@ Further inspection of the binary's imports revealed specific API calls used for 
 ### API Imports
 The malware imports functions from `Kernel32.dll` to interact with the file system. Specifically, it utilizes **`GetDriveType`** (likely `GetDriveTypeA` or `GetDriveTypeW`) to enumerate and check the types of drives connected to the system.
 
-![Import Analysis](../../Pasted%20image%2020251207200950.png)
+
 
 ## 4. Dynamic Analysis
 Dynamic analysis was conducted using ANY.RUN to observe the malware's behavior in a controlled environment.
@@ -56,6 +56,10 @@ The malware attempts to establish a connection to a remote command and control (
 | **Registry Value** | `HealthCheck` |
 
 ---
-*Analysis generated on December 7, 2025.*
+
+
+
+![Import Analysis](../../Pasted%20image%2020251207200950.png)
+
 
 
