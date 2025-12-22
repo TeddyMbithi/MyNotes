@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "RE/BINARY EXPLOITATION/PWNDBG.md",
+                "file": "CYBERSTUDENTS/DAY 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "PWNDBG"
+              "title": "DAY 4"
             }
           }
         ]
@@ -186,22 +186,30 @@
   },
   "active": "e716a8e57141a8e5",
   "lastOpenFiles": [
+    "Pasted image 20251221234901.png",
+    "Pasted image 20251221234745.png",
+    "Pasted image 20251221234635.png",
+    "Pasted image 20251221234607.png",
+    "Pasted image 20251221234116.png",
+    "Pasted image 20251221233819.png",
+    "CYBERSTUDENTS/DAY 3.md",
+    "CYBERSTUDENTS/DAY 4.md",
+    "Pasted image 20251221232236.png",
+    "CYBERSTUDENTS/DAY 2.md",
+    "Pasted image 20251221231647.png",
+    "Pasted image 20251221231253.png",
+    "Pasted image 20251221231145.png",
+    "Pasted image 20251221225858.png",
+    "CYBERSTUDENTS/DAY 1.md",
+    "RE/BINARY EXPLOITATION/PWNDBG.md",
+    "CYBERSTUDENTS",
     "RE/BINARY EXPLOITATION/LTRACE(strace).md",
     "RE/BINARY EXPLOITATION/INTRO TO BUFFER OVERFLOWS.md",
     "RE/BINARY EXPLOITATION/STACK.md",
-    "RE/BINARY EXPLOITATION/PWNDBG.md",
     "HTB/SHERLOCKS/SECRETPICTURES.md",
     "RE/BINARY EXPLOITATION",
     "RE",
     "Untitled.canvas",
-    "Pasted image 20251207200950.png",
-    "Pasted image 20251207195119.png",
-    "Pasted image 20251207192742.png",
-    "Pasted image 20251207192706.png",
-    "Pasted image 20251207192649.png",
-    "Pasted image 20251207192219.png",
-    "Pasted image 20251207191613.png",
-    "Pasted image 20251130123136.png",
     "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
     "HTB/SHERLOCKS",
     "HTB/RE/SIMPLE ENCRYPTOR/WRITEUP.md",
@@ -219,7 +227,6 @@
     "MALWARE BABY/STATIC ANALYSIS",
     "MALWARE BABY",
     "THM/RE",
-    "HTB",
-    "THM"
+    "HTB"
   ]
 }
