@@ -1,6 +1,6 @@
 
 Here is the challenge description:
-![[Pasted image 20251221232236.png]]
+![Image](../../images/Pasted image 20251221232236.png)
 
 1️⃣ DMARC Record Leak
 

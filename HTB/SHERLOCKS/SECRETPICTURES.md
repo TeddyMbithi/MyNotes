@@ -10,7 +10,7 @@ Initial static analysis was performed to identify the file's properties and comp
 *   **Programming Language**: `GOLANG`
 
 **Static Analysis Overview (Cutter):**
-![Static Analysis Overview](../../Pasted%20image%2020251130123136.png)
+![Static Analysis Overview](../../images/Pasted%20image%2020251130123136.png)
 
 ## 3. Static Analysis
 Further inspection of the binary's imports revealed specific API calls used for system reconnaissance.
@@ -23,7 +23,7 @@ The malware imports functions from `Kernel32.dll` to interact with the file syst
 ## 4. Dynamic Analysis
 Dynamic analysis was conducted using ANY.RUN to observe the malware's behavior in a controlled environment.
 
-![ANY.RUN Analysis](../../Pasted%20image%2020251207191613.png)
+![ANY.RUN Analysis](../../images/Pasted%20image%2020251207191613.png)
 
 ### File System Artifacts
 Upon execution, the malware copies itself to a specific directory to establish a foothold.
@@ -35,15 +35,15 @@ To ensure it runs automatically upon system reboot, the malware modifies the Win
 *   **Value Name**: `HealthCheck`
 
 **Registry Modification Evidence:**
-![Registry Key Modification](../../Pasted%20image%2020251207192219.png)
-![Persistence Entry](../../Pasted%20image%2020251207192706.png)
+![Registry Key Modification](../../images/Pasted%20image%2020251207192219.png)
+![Persistence Entry](../../images/Pasted%20image%2020251207192706.png)
 
 ### Network Activity
 The malware attempts to establish a connection to a remote command and control (C2) server.
 *   **FQDN**: `malware.invalid.com`
 
 **Network Traffic Analysis:**
-![Network Connection](../../Pasted%20image%2020251207192742.png)
+![Network Connection](../../images/Pasted%20image%2020251207192742.png)
 
 ## 5. Indicators of Compromise (IOCs)
 
@@ -59,7 +59,7 @@ The malware attempts to establish a connection to a remote command and control (
 
 
 
-![Import Analysis](../../Pasted%20image%2020251207200950.png)
+![Import Analysis](../../images/Pasted%20image%2020251207200950.png)
 
 
 

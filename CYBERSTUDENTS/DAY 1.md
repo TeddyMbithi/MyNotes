@@ -1,8 +1,8 @@
 Here is the challenge description:
-![[Pasted image 20251221225724.png]]
+![Image](../../images/Pasted image 20251221225724.png)
 
 Output of the start.txt is as follows:
-![[Pasted image 20251221225858.png]]
+![Image](../../images/Pasted image 20251221225858.png)
 
 ## 🔹 Step 1: Binary → ASCII
 

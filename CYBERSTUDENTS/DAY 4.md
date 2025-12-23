@@ -1,8 +1,8 @@
 Here is the challenge description:
-![[Pasted image 20251221233819.png]]
+![Image](../../images/Pasted image 20251221233819.png)
 
 Downloading the binary we get this:
-![[Pasted image 20251221234116.png]]
+![Image](../../images/Pasted image 20251221234116.png)
 
 Output Analysis:
 - ELF 64-bit LSB pie executable - Linux 64-bit executable with Position Independent Execution
@@ -31,10 +31,10 @@ Key Functions Detected:
 - __printf_chk, puts - Output functions
 	
 
-![[Pasted image 20251221234635.png]]
+![Image](../../images/Pasted image 20251221234635.png)
 
 Running the binary we get: (With a fail message)
-![[Pasted image 20251221234745.png]]
+![Image](../../images/Pasted image 20251221234745.png)
 
 Analysis:
 - The program expects user input (access code)
@@ -43,7 +43,7 @@ Analysis:
 
 
 Using Ltrace is also unsuccessful
-![[Pasted image 20251221234901.png]]
+![Image](../../images/Pasted image 20251221234901.png)
 Strategic Insight: The presence of ptrace indicated sophisticated anti-debugging protection that would need to be bypassed.
 
 Analysis:
