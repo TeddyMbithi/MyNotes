@@ -1,4 +1,10 @@
 // ========================================
+// Mobile Navigation Toggle
+// ========================================
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+// ========================================
 // Smooth Scrolling Navigation
 // ========================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -25,10 +31,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ========================================
-// Mobile Navigation Toggle
+// Mobile Navigation Toggle Handlers
 // ========================================
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -150,16 +154,18 @@ function highlightNavigation() {
         
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
             navLinks.forEach(link => {
-                link.style.color = '';
+                link.classList.remove('active-link');
                 if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.style.color = 'var(--primary-color)';
+                    link.classList.add('active-link');
                 }
             });
         }
     });
 }
 
-window.addEventListener('scroll', highlightNavigation);
+// Apply debounced scroll listeners
+const debouncedHighlight = debounce(highlightNavigation, 10);
+window.addEventListener('scroll', debouncedHighlight);
 
 // ========================================
 // Typing Effect for Hero Title (Optional)
@@ -302,9 +308,6 @@ function debounce(func, wait = 10) {
         timeout = setTimeout(later, wait);
     };
 }
-
-// Apply debounce to scroll handlers
-window.addEventListener('scroll', debounce(highlightNavigation, 10));
 
 // ========================================
 // Form Validation (if contact form is added)

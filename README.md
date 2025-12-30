@@ -96,10 +96,11 @@ The site is automatically deployed to GitHub Pages when changes are pushed to th
 ### Configuration
 The `_config.yml` file contains GitHub Pages settings:
 ```yaml
-theme: jekyll-theme-minimal
-title: CTF Writeups & Notes
-description: Cybersecurity notes, CTF writeups, and malware analysis by TeddyMbithi
-show_downloads: true
+title: TeddyMbithi | Cybersecurity Portfolio
+description: Modern portfolio showcasing CTF writeups, reverse engineering, and malware analysis
+author: TeddyMbithi
+url: https://TeddyMbithi.github.io
+baseurl: /MyNotes
 ```
 
 ## 🎨 Customization
