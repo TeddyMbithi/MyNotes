@@ -1177,6 +1177,21 @@ button:focus {
 .writeup-footer {
     text-align: center;
     margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.writeup-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 /* Responsive Design for Content View */

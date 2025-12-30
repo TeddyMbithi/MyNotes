@@ -487,11 +487,27 @@ function markdownToHTML(markdown) {
 
 // Show category list view
 function showCategoryView(categoryKey) {
+    console.log('Loading category:', categoryKey);
+    
+    if (!contentStructure) {
+        console.error('Content structure not loaded yet');
+        alert('Content is still loading. Please try again in a moment.');
+        return;
+    }
+    
     const category = contentStructure.categories[categoryKey];
-    if (!category) return;
+    if (!category) {
+        console.error('Category not found:', categoryKey);
+        return;
+    }
+    
+    console.log('Category data:', category);
+    
+    // Remove any existing content view first
+    const existingView = document.getElementById('content-view');
+    if (existingView) existingView.remove();
     
     const mainContent = document.querySelector('main') || document.body;
-    const projectsSection = document.getElementById('projects');
     
     // Hide main sections
     document.querySelectorAll('section').forEach(section => {
@@ -522,7 +538,7 @@ function showCategoryView(categoryKey) {
             
             <div class="writeups-grid">
                 ${category.writeups.map(writeup => `
-                    <div class="writeup-card" onclick="showWriteup('${categoryKey}', '${writeup.path}')">
+                    <div class="writeup-card" onclick="showWriteup('${categoryKey}', '${encodeURIComponent(writeup.path)}')">
                         <div class="writeup-header">
                             <h3>${writeup.title}</h3>
                             <span class="difficulty ${writeup.difficulty.toLowerCase()}">${writeup.difficulty}</span>
@@ -545,20 +561,35 @@ function showCategoryView(categoryKey) {
 }
 
 // Show individual writeup
-async function showWriteup(categoryKey, path) {
+async function showWriteup(categoryKey, encodedPath) {
+    const path = decodeURIComponent(encodedPath);
+    console.log('Loading writeup:', path);
+    
     try {
         const response = await fetch(path);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
         const markdown = await response.text();
         const html = markdownToHTML(markdown);
         
         const category = contentStructure.categories[categoryKey];
         const writeup = category.writeups.find(w => w.path === path);
         
+        if (!writeup) {
+            throw new Error('Writeup not found in category');
+        }
+        
         const mainContent = document.querySelector('main') || document.body;
         
         // Remove existing content view
         const existingView = document.getElementById('content-view');
         if (existingView) existingView.remove();
+        
+        // Hide main sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.display = 'none';
+        });
         
         // Create writeup view
         const writeupView = document.createElement('div');
@@ -583,9 +614,12 @@ async function showWriteup(categoryKey, path) {
                 </article>
                 
                 <div class="writeup-footer">
-                    <a href="#" onclick="showCategoryView('${categoryKey}'); return false;" class="btn btn-secondary">
+                    <button onclick="showCategoryView('${categoryKey}')" class="btn btn-secondary">
                         <i class="fas fa-arrow-left"></i> Back to ${category.name}
-                    </a>
+                    </button>
+                    <button onclick="returnToHome()" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Home
+                    </button>
                 </div>
             </div>
         `;
@@ -598,13 +632,14 @@ async function showWriteup(categoryKey, path) {
             Prism.highlightAll();
         }
     } catch (error) {
-        console.error('Error loading writeup:', error);
-        alert('Error loading content. Please try again.');
+        console.error('Error loading writeup:', error, 'Path:', path);
+        alert('Error loading content: ' + error.message + '\nPath: ' + path);
     }
 }
 
 // Return to home view
 function returnToHome() {
+    console.log('Returning to home');
     const contentView = document.getElementById('content-view');
     if (contentView) contentView.remove();
     
@@ -615,40 +650,17 @@ function returnToHome() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Update project cards to use dynamic loading
-function setupDynamicCards() {
-    const projectCards = document.querySelectorAll('.project-card .card-link');
-    
-    projectCards.forEach(card => {
-        const href = card.getAttribute('href');
-        
-        // Check if this is a category we have in our structure
-        if (href && href.includes('github.com') && href.includes('tree/main/')) {
-            const categoryPath = href.split('tree/main/')[1];
-            let categoryKey = null;
-            
-            if (categoryPath === 'HTB') categoryKey = 'HTB';
-            else if (categoryPath === 'THM') categoryKey = 'THM';
-            else if (categoryPath === 'RE') categoryKey = 'RE';
-            else if (categoryPath.startsWith('MALWARE')) categoryKey = 'MALWARE';
-            else if (categoryPath === 'CYBERSTUDENTS') categoryKey = 'CYBERSTUDENTS';
-            
-            if (categoryKey) {
-                card.onclick = (e) => {
-                    e.preventDefault();
-                    showCategoryView(categoryKey);
-                    return false;
-                };
-                card.removeAttribute('target');
-            }
-        }
-    });
-}
+// Update project cards to use dynamic loading - REMOVED, using onclick in HTML
 
 // Initialize content system
-loadContentStructure().then(() => {
-    setupDynamicCards();
-});
+async function initializeContentSystem() {
+    console.log('Initializing content system...');
+    await loadContentStructure();
+    console.log('Content structure loaded:', contentStructure);
+}
+
+// Call initialization
+initializeContentSystem();
 
 // Make functions globally available
 window.showCategoryView = showCategoryView;
