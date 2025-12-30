@@ -464,10 +464,21 @@ function markdownToHTML(markdown, basePath = '') {
         // If it's a relative path, make it absolute from root
         let imageSrc = src;
         if (!src.startsWith('http') && !src.startsWith('/')) {
-            // Handle relative paths like ../images/pic.png or images/pic.png
-            if (src.startsWith('../')) {
-                // Go up from current directory
-                imageSrc = src.replace(/\.\.\//g, '');
+            // Handle ../ paths by resolving them
+            if (src.includes('../')) {
+                const srcParts = src.split('/');
+                const baseParts = dirPath.split('/').filter(p => p); // Remove empty strings
+                
+                // Process each part of the source path
+                for (const part of srcParts) {
+                    if (part === '..') {
+                        baseParts.pop(); // Go up one directory
+                    } else if (part !== '.') {
+                        baseParts.push(part); // Add the path part
+                    }
+                }
+                
+                imageSrc = baseParts.join('/');
             } else if (dirPath) {
                 // Relative to current directory
                 imageSrc = dirPath + '/' + src;
@@ -475,7 +486,9 @@ function markdownToHTML(markdown, basePath = '') {
                 imageSrc = src;
             }
         }
-        return `<img src="${imageSrc}" alt="${alt}" style="max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0;" />`;
+        
+        console.log('Image path resolved:', src, '->', imageSrc);
+        return `<img src="${imageSrc}" alt="${alt}" style="max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />`;
     });
     
     // Headers
