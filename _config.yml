@@ -1,5 +1,15 @@
-theme: jekyll-theme-minimal
-title: CTF Writeups & Notes
-description: Cybersecurity notes, CTF writeups, and malware analysis by TeddyMbithi
-show_downloads: true
-logo: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
+# GitHub Pages Configuration
+# Using custom HTML/CSS/JS instead of Jekyll theme
+title: TeddyMbithi | Cybersecurity Portfolio
+description: Modern portfolio showcasing CTF writeups, reverse engineering, and malware analysis
+author: TeddyMbithi
+url: https://TeddyMbithi.github.io
+baseurl: /MyNotes
+
+# Disable Jekyll processing for custom HTML site
+# The site uses vanilla HTML/CSS/JS for better performance
+exclude:
+  - README.md
+  - .gitignore
+  - .obsidian/
+  - .vscode/
