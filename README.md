@@ -1,6 +1,9 @@
 # CTF Writeups
 
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-blue?style=for-the-badge&logo=github)](https://TeddyMbithi.github.io/MyNotes/)
+
 Collection of Capture The Flag writeups and cybersecurity notes.
+**View the live site here:** [https://TeddyMbithi.github.io/MyNotes/](https://TeddyMbithi.github.io/MyNotes/)
 
 ## Structure
 
