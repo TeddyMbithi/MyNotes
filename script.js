@@ -451,8 +451,32 @@ async function loadContentStructure() {
 }
 
 // Simple markdown to HTML converter
-function markdownToHTML(markdown) {
+function markdownToHTML(markdown, basePath = '') {
     let html = markdown;
+    
+    // Extract the directory path from basePath for relative image resolution
+    const pathParts = basePath.split('/');
+    pathParts.pop(); // Remove filename
+    const dirPath = pathParts.join('/');
+    
+    // Images - must be processed before links to avoid conflicts
+    html = html.replace(/!\[([^\]]*)\]\(([^\)]+)\)/gim, (match, alt, src) => {
+        // If it's a relative path, make it absolute from root
+        let imageSrc = src;
+        if (!src.startsWith('http') && !src.startsWith('/')) {
+            // Handle relative paths like ../images/pic.png or images/pic.png
+            if (src.startsWith('../')) {
+                // Go up from current directory
+                imageSrc = src.replace(/\.\.\//g, '');
+            } else if (dirPath) {
+                // Relative to current directory
+                imageSrc = dirPath + '/' + src;
+            } else {
+                imageSrc = src;
+            }
+        }
+        return `<img src="${imageSrc}" alt="${alt}" style="max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0;" />`;
+    });
     
     // Headers
     html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
@@ -465,7 +489,7 @@ function markdownToHTML(markdown) {
     // Italic
     html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
     
-    // Links
+    // Links (after images to avoid conflicts)
     html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2" target="_blank">$1</a>');
     
     // Code blocks
@@ -571,7 +595,7 @@ async function showWriteup(categoryKey, encodedPath) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const markdown = await response.text();
-        const html = markdownToHTML(markdown);
+        const html = markdownToHTML(markdown, path);
         
         const category = contentStructure.categories[categoryKey];
         const writeup = category.writeups.find(w => w.path === path);
