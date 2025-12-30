@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cybersecurity portfolio showcasing CTF writeups, reverse engineering notes, and malware analysis by TeddyMbithi">
+    <meta name="author" content="TeddyMbithi">
+    <title>TeddyMbithi | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">TeddyMbithi</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-icons">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">
+                Hi, I'm <span class="highlight">TeddyMbithi</span>
+            </h1>
+            <p class="hero-subtitle fade-in">Cybersecurity Enthusiast | CTF Player | Malware Analyst</p>
+            <p class="hero-description fade-in">
+                Passionate about reverse engineering, binary exploitation, and malware analysis.
+                Documenting my journey through CTF challenges and cybersecurity research.
+            </p>
+            <div class="hero-buttons fade-in">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to my cybersecurity portfolio! This repository serves as a comprehensive collection
+                        of my journey through various cybersecurity challenges, CTF competitions, and malware analysis projects.
+                    </p>
+                    <p>
+                        I focus on practical hands-on learning through platforms like HackTheBox, TryHackMe, and 
+                        specialized cybersecurity training programs. My areas of interest include:
+                    </p>
+                    <ul class="about-list">
+                        <li><i class="fas fa-check"></i> Binary Exploitation & Buffer Overflows</li>
+                        <li><i class="fas fa-check"></i> Reverse Engineering & Malware Analysis</li>
+                        <li><i class="fas fa-check"></i> CTF Competitions (HTB, THM, CyberStudents)</li>
+                        <li><i class="fas fa-check"></i> Static & Dynamic Analysis Techniques</li>
+                        <li><i class="fas fa-check"></i> Vulnerability Research & Exploitation</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-flag-checkered"></i>
+                        <h3>CTF Writeups</h3>
+                        <p>Multiple platforms</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-bug"></i>
+                        <h3>Malware Analysis</h3>
+                        <p>Static & Dynamic</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Reverse Engineering</h3>
+                        <p>Binary Exploitation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects & Writeups</h2>
+            <p class="section-subtitle">A collection of my cybersecurity research and CTF solutions</p>
+            
+            <div class="projects-grid">
+                <!-- HackTheBox Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>HackTheBox</h3>
+                    <p>Detailed writeups from HackTheBox challenges including Sherlocks investigations and reverse engineering tasks.</p>
+                    <div class="card-tags">
+                        <span class="tag">HTB</span>
+                        <span class="tag">Forensics</span>
+                        <span class="tag">RE</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes/tree/main/HTB" class="card-link" target="_blank">
+                        View Writeups <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- TryHackMe Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>TryHackMe</h3>
+                    <p>Solutions and methodologies for TryHackMe rooms covering various cybersecurity domains and techniques.</p>
+                    <div class="card-tags">
+                        <span class="tag">THM</span>
+                        <span class="tag">Training</span>
+                        <span class="tag">Practice</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes/tree/main/THM" class="card-link" target="_blank">
+                        View Writeups <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Reverse Engineering Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Reverse Engineering</h3>
+                    <p>Binary exploitation techniques, buffer overflow exploits, crackme solutions, and x86 assembly analysis.</p>
+                    <div class="card-tags">
+                        <span class="tag">Binary</span>
+                        <span class="tag">Exploitation</span>
+                        <span class="tag">ASM</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes/tree/main/RE" class="card-link" target="_blank">
+                        View Notes <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Malware Analysis Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3>Malware Analysis</h3>
+                    <p>Static analysis techniques including PE headers, process injection, Windows API analysis, and hash verification.</p>
+                    <div class="card-tags">
+                        <span class="tag">Malware</span>
+                        <span class="tag">Static</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes/tree/main/MALWARE%20BABY" class="card-link" target="_blank">
+                        View Notes <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- CyberStudents Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>CyberStudents</h3>
+                    <p>Challenge solutions from the CyberStudents platform covering cryptography, encoding, and CTF fundamentals.</p>
+                    <div class="card-tags">
+                        <span class="tag">Crypto</span>
+                        <span class="tag">Challenges</span>
+                        <span class="tag">Learning</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes/tree/main/CYBERSTUDENTS" class="card-link" target="_blank">
+                        View Writeups <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Tools & Resources Card -->
+                <div class="project-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Tools & Techniques</h3>
+                    <p>Documentation on essential tools like pwndbg, GDB, ltrace, and debugging methodologies for exploit development.</p>
+                    <div class="card-tags">
+                        <span class="tag">Tools</span>
+                        <span class="tag">Debugging</span>
+                        <span class="tag">Resources</span>
+                    </div>
+                    <a href="https://github.com/TeddyMbithi/MyNotes" class="card-link" target="_blank">
+                        Explore Repository <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-subtitle">Technical expertise and tools I work with</p>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming & Scripting</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">Assembly (x86/x64)</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">Go</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-bug"></i> Reverse Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">IDA Pro</span>
+                        <span class="skill-tag">Ghidra</span>
+                        <span class="skill-tag">Cutter/Rizin</span>
+                        <span class="skill-tag">GDB/Pwndbg</span>
+                        <span class="skill-tag">x64dbg</span>
+                        <span class="skill-tag">Binary Ninja</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-virus"></i> Malware Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Static Analysis</span>
+                        <span class="skill-tag">Dynamic Analysis</span>
+                        <span class="skill-tag">PE Analysis</span>
+                        <span class="skill-tag">ANY.RUN</span>
+                        <span class="skill-tag">Process Monitor</span>
+                        <span class="skill-tag">API Hooking</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-shield-alt"></i> Exploitation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Buffer Overflow</span>
+                        <span class="skill-tag">ROP Chains</span>
+                        <span class="skill-tag">Shellcode</span>
+                        <span class="skill-tag">Metasploit</span>
+                        <span class="skill-tag">Pwntools</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-search"></i> Forensics & Analysis</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Wireshark</span>
+                        <span class="skill-tag">Volatility</span>
+                        <span class="skill-tag">Autopsy</span>
+                        <span class="skill-tag">FTK Imager</span>
+                        <span class="skill-tag">Registry Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-network-wired"></i> Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HackTheBox</span>
+                        <span class="skill-tag">TryHackMe</span>
+                        <span class="skill-tag">CyberStudents</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's connect and collaborate on cybersecurity projects</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <h3>GitHub</h3>
+                        <p>Check out my repositories and contributions</p>
+                        <a href="https://github.com/TeddyMbithi" target="_blank" class="contact-link">
+                            @TeddyMbithi
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Repository</h3>
+                        <p>Explore my complete notes collection</p>
+                        <a href="https://github.com/TeddyMbithi/MyNotes" target="_blank" class="contact-link">
+                            MyNotes Repository
+                        </a>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>Contribute</h3>
+                        <p>Feel free to suggest improvements or collaborate</p>
+                        <a href="https://github.com/TeddyMbithi/MyNotes/issues" target="_blank" class="contact-link">
+                            Open an Issue
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://github.com/TeddyMbithi" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/teddymbithi" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/teddymbithi" target="_blank" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TeddyMbithi. All rights reserved.</p>
+            <p>Built with <i class="fas fa-heart"></i> for the cybersecurity community</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
