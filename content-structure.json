@@ -1,0 +1,186 @@
+{
+  "categories": {
+    "HTB": {
+      "name": "HackTheBox",
+      "icon": "fa-cube",
+      "description": "Detailed writeups from HackTheBox challenges",
+      "writeups": [
+        {
+          "title": "Simple Encryptor",
+          "path": "HTB/RE/SIMPLE ENCRYPTOR/WRITEUP.md",
+          "category": "Reverse Engineering",
+          "difficulty": "Easy",
+          "description": "Reverse engineering a simple encryption algorithm"
+        },
+        {
+          "title": "Secret Pictures",
+          "path": "HTB/SHERLOCKS/SECRETPICTURES.md",
+          "category": "Forensics",
+          "difficulty": "Medium",
+          "description": "Sherlock investigation involving hidden data in images"
+        }
+      ]
+    },
+    "THM": {
+      "name": "TryHackMe",
+      "icon": "fa-terminal",
+      "description": "Solutions and methodologies for TryHackMe rooms",
+      "writeups": [
+        {
+          "title": "Reverse Engineering Intro",
+          "path": "THM/RE/INTRO.md",
+          "category": "Reverse Engineering",
+          "difficulty": "Easy",
+          "description": "Introduction to reverse engineering concepts"
+        }
+      ]
+    },
+    "RE": {
+      "name": "Reverse Engineering",
+      "icon": "fa-microchip",
+      "description": "Binary exploitation and reverse engineering techniques",
+      "writeups": [
+        {
+          "title": "Intro to Buffer Overflows",
+          "path": "RE/BINARY EXPLOITATION/INTRO TO BUFFER OVERFLOWS.md",
+          "category": "Binary Exploitation",
+          "difficulty": "Intermediate",
+          "description": "Essential tools and key commands for binary exploitation"
+        },
+        {
+          "title": "Stack Operations",
+          "path": "RE/BINARY EXPLOITATION/STACK.md",
+          "category": "Binary Exploitation",
+          "difficulty": "Intermediate",
+          "description": "Understanding stack operations in binary exploitation"
+        },
+        {
+          "title": "PWNDBG Usage",
+          "path": "RE/BINARY EXPLOITATION/PWNDBG.md",
+          "category": "Tools",
+          "difficulty": "Beginner",
+          "description": "Guide to using PWNDBG for debugging"
+        },
+        {
+          "title": "LTRACE and STRACE",
+          "path": "RE/BINARY EXPLOITATION/LTRACE(strace).md",
+          "category": "Tools",
+          "difficulty": "Beginner",
+          "description": "System and library call tracing techniques"
+        },
+        {
+          "title": "x86 Assembly Implementations",
+          "path": "RE/BINARY EXPLOITATION/x86_ASS_IMPLEMENTATIONS.md",
+          "category": "Assembly",
+          "difficulty": "Advanced",
+          "description": "x86 assembly language implementations"
+        },
+        {
+          "title": "Segfault Crackme",
+          "path": "RE/CRACKMES/SEGFAULT.md",
+          "category": "Crackme",
+          "difficulty": "Medium",
+          "description": "Solving a segfault-based crackme challenge"
+        }
+      ]
+    },
+    "MALWARE": {
+      "name": "Malware Analysis",
+      "icon": "fa-shield-virus",
+      "description": "Static and dynamic malware analysis techniques",
+      "writeups": [
+        {
+          "title": "Advanced Static Analysis",
+          "path": "MALWARE BABY/STATIC ANALYSIS/ADVANCED STATIC ANA.md",
+          "category": "Static Analysis",
+          "difficulty": "Advanced",
+          "description": "Advanced techniques for static malware analysis"
+        },
+        {
+          "title": "PE Headers",
+          "path": "MALWARE BABY/STATIC ANALYSIS/PE HEADERS.md",
+          "category": "Static Analysis",
+          "difficulty": "Intermediate",
+          "description": "Understanding and analyzing PE file headers"
+        },
+        {
+          "title": "Process Injection",
+          "path": "MALWARE BABY/STATIC ANALYSIS/PROCESS INJECTION.md",
+          "category": "Static Analysis",
+          "difficulty": "Advanced",
+          "description": "Process injection techniques and detection"
+        },
+        {
+          "title": "Windows API",
+          "path": "MALWARE BABY/STATIC ANALYSIS/WINDOWS API.md",
+          "category": "Static Analysis",
+          "difficulty": "Intermediate",
+          "description": "Windows API calls used in malware"
+        },
+        {
+          "title": "Malware API",
+          "path": "MALWARE BABY/STATIC ANALYSIS/MALWARE API.md",
+          "category": "Static Analysis",
+          "difficulty": "Intermediate",
+          "description": "Common malware API patterns and analysis"
+        },
+        {
+          "title": "Strings Analysis",
+          "path": "MALWARE BABY/STATIC ANALYSIS/STRINGS.md",
+          "category": "Static Analysis",
+          "difficulty": "Beginner",
+          "description": "Extracting and analyzing strings in malware"
+        },
+        {
+          "title": "MD5 Hash Checking",
+          "path": "MALWARE BABY/STATIC ANALYSIS/MD5 CHECK.md",
+          "category": "Static Analysis",
+          "difficulty": "Beginner",
+          "description": "MD5 hash verification for malware samples"
+        },
+        {
+          "title": "SHA256 Hash Checking",
+          "path": "MALWARE BABY/STATIC ANALYSIS/SHA256 CHECK.md",
+          "category": "Static Analysis",
+          "difficulty": "Beginner",
+          "description": "SHA256 hash verification techniques"
+        }
+      ]
+    },
+    "CYBERSTUDENTS": {
+      "name": "CyberStudents",
+      "icon": "fa-graduation-cap",
+      "description": "Challenge solutions from the CyberStudents platform",
+      "writeups": [
+        {
+          "title": "Day 1 Challenges",
+          "path": "CYBERSTUDENTS/DAY 1.md",
+          "category": "Challenges",
+          "difficulty": "Beginner",
+          "description": "Day 1 CyberStudents challenge solutions"
+        },
+        {
+          "title": "Day 2 Challenges",
+          "path": "CYBERSTUDENTS/DAY 2.md",
+          "category": "Challenges",
+          "difficulty": "Beginner",
+          "description": "Day 2 CyberStudents challenge solutions"
+        },
+        {
+          "title": "Day 3 Challenges",
+          "path": "CYBERSTUDENTS/DAY 3.md",
+          "category": "Challenges",
+          "difficulty": "Intermediate",
+          "description": "Day 3 CyberStudents challenge solutions"
+        },
+        {
+          "title": "Day 4 Challenges",
+          "path": "CYBERSTUDENTS/DAY 4.md",
+          "category": "Challenges",
+          "difficulty": "Intermediate",
+          "description": "Day 4 CyberStudents challenge solutions"
+        }
+      ]
+    }
+  }
+}

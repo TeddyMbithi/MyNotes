@@ -892,3 +892,332 @@ button:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
+/* ========================================
+   Dynamic Content View Styles
+   ======================================== */
+.content-view {
+    min-height: 100vh;
+    padding: 100px 0 80px;
+    background: var(--bg-secondary);
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.breadcrumb a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+    color: var(--secondary-color);
+}
+
+.breadcrumb i.fa-chevron-right {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 20px;
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+}
+
+.category-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 20px;
+    font-size: 36px;
+    color: white;
+}
+
+.category-header h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+}
+
+.category-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Writeups Grid */
+.writeups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.writeup-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.writeup-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-hover);
+    border-color: var(--primary-color);
+}
+
+.writeup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 15px;
+}
+
+.writeup-header h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin: 0;
+    flex: 1;
+    line-height: 1.3;
+}
+
+.difficulty {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.difficulty.easy,
+.difficulty.beginner {
+    background: rgba(46, 204, 113, 0.1);
+    color: #27ae60;
+}
+
+.difficulty.medium,
+.difficulty.intermediate {
+    background: rgba(241, 196, 15, 0.1);
+    color: #f39c12;
+}
+
+.difficulty.hard,
+.difficulty.advanced {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+}
+
+.writeup-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.writeup-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.category-badge {
+    padding: 6px 12px;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.read-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-fast);
+}
+
+.writeup-card:hover .read-link {
+    gap: 12px;
+}
+
+/* Individual Writeup View */
+.writeup-view {
+    background: var(--bg-primary);
+}
+
+.writeup-content {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
+    margin: 30px 0;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.writeup-content h1 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.writeup-content h2 {
+    font-size: 2rem;
+    color: var(--text-primary);
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.writeup-content h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.writeup-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.writeup-content ul,
+.writeup-content ol {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.writeup-content li {
+    margin-bottom: 10px;
+}
+
+.writeup-content code {
+    background: var(--bg-tertiary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: var(--font-code);
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.writeup-content pre {
+    background: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 25px 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.writeup-content pre code {
+    background: none;
+    padding: 0;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.writeup-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+.writeup-content a:hover {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+.writeup-content strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.writeup-content blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+
+.writeup-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Responsive Design for Content View */
+@media (max-width: 968px) {
+    .writeups-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    
+    .writeup-content {
+        padding: 30px 20px;
+    }
+    
+    .category-header h1 {
+        font-size: 2rem;
+    }
+    
+    .writeup-content h1 {
+        font-size: 2rem;
+    }
+    
+    .writeup-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .writeup-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .writeups-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .writeup-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .category-header {
+        padding: 30px 15px;
+    }
+}

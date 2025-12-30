@@ -432,3 +432,225 @@ if (typeof module !== 'undefined' && module.exports) {
         trackEvent
     };
 }
+
+// ========================================
+// Dynamic Content Loading System
+// ========================================
+
+let contentStructure = null;
+let currentView = 'home';
+
+// Load content structure
+async function loadContentStructure() {
+    try {
+        const response = await fetch('content-structure.json');
+        contentStructure = await response.json();
+    } catch (error) {
+        console.error('Error loading content structure:', error);
+    }
+}
+
+// Simple markdown to HTML converter
+function markdownToHTML(markdown) {
+    let html = markdown;
+    
+    // Headers
+    html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+    html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+    html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+    
+    // Bold
+    html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+    
+    // Italic
+    html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+    
+    // Links
+    html = html.replace(/\[([^\]]+)\]\(([^\)]+)\)/gim, '<a href="$2" target="_blank">$1</a>');
+    
+    // Code blocks
+    html = html.replace(/```(\w+)?\n([\s\S]*?)```/gim, '<pre><code class="language-$1">$2</code></pre>');
+    
+    // Inline code
+    html = html.replace(/`([^`]+)`/gim, '<code>$1</code>');
+    
+    // Lists
+    html = html.replace(/^\s*-\s+(.*)$/gim, '<li>$1</li>');
+    html = html.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+    
+    // Line breaks
+    html = html.replace(/\n\n/g, '</p><p>');
+    html = '<p>' + html + '</p>';
+    
+    return html;
+}
+
+// Show category list view
+function showCategoryView(categoryKey) {
+    const category = contentStructure.categories[categoryKey];
+    if (!category) return;
+    
+    const mainContent = document.querySelector('main') || document.body;
+    const projectsSection = document.getElementById('projects');
+    
+    // Hide main sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Create breadcrumb and content container
+    const contentView = document.createElement('div');
+    contentView.id = 'content-view';
+    contentView.className = 'content-view';
+    contentView.innerHTML = `
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="#" onclick="returnToHome(); return false;">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <i class="fas fa-chevron-right"></i>
+                <span>${category.name}</span>
+            </div>
+            
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas ${category.icon}"></i>
+                </div>
+                <h1>${category.name}</h1>
+                <p>${category.description}</p>
+            </div>
+            
+            <div class="writeups-grid">
+                ${category.writeups.map(writeup => `
+                    <div class="writeup-card" onclick="showWriteup('${categoryKey}', '${writeup.path}')">
+                        <div class="writeup-header">
+                            <h3>${writeup.title}</h3>
+                            <span class="difficulty ${writeup.difficulty.toLowerCase()}">${writeup.difficulty}</span>
+                        </div>
+                        <p class="writeup-description">${writeup.description}</p>
+                        <div class="writeup-meta">
+                            <span class="category-badge">${writeup.category}</span>
+                            <span class="read-link">
+                                Read More <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    mainContent.appendChild(contentView);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Show individual writeup
+async function showWriteup(categoryKey, path) {
+    try {
+        const response = await fetch(path);
+        const markdown = await response.text();
+        const html = markdownToHTML(markdown);
+        
+        const category = contentStructure.categories[categoryKey];
+        const writeup = category.writeups.find(w => w.path === path);
+        
+        const mainContent = document.querySelector('main') || document.body;
+        
+        // Remove existing content view
+        const existingView = document.getElementById('content-view');
+        if (existingView) existingView.remove();
+        
+        // Create writeup view
+        const writeupView = document.createElement('div');
+        writeupView.id = 'content-view';
+        writeupView.className = 'content-view writeup-view';
+        writeupView.innerHTML = `
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="#" onclick="returnToHome(); return false;">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <i class="fas fa-chevron-right"></i>
+                    <a href="#" onclick="showCategoryView('${categoryKey}'); return false;">
+                        ${category.name}
+                    </a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>${writeup.title}</span>
+                </div>
+                
+                <article class="writeup-content">
+                    ${html}
+                </article>
+                
+                <div class="writeup-footer">
+                    <a href="#" onclick="showCategoryView('${categoryKey}'); return false;" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to ${category.name}
+                    </a>
+                </div>
+            </div>
+        `;
+        
+        mainContent.appendChild(writeupView);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        
+        // Add syntax highlighting if available
+        if (typeof Prism !== 'undefined') {
+            Prism.highlightAll();
+        }
+    } catch (error) {
+        console.error('Error loading writeup:', error);
+        alert('Error loading content. Please try again.');
+    }
+}
+
+// Return to home view
+function returnToHome() {
+    const contentView = document.getElementById('content-view');
+    if (contentView) contentView.remove();
+    
+    document.querySelectorAll('section').forEach(section => {
+        section.style.display = '';
+    });
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Update project cards to use dynamic loading
+function setupDynamicCards() {
+    const projectCards = document.querySelectorAll('.project-card .card-link');
+    
+    projectCards.forEach(card => {
+        const href = card.getAttribute('href');
+        
+        // Check if this is a category we have in our structure
+        if (href && href.includes('github.com') && href.includes('tree/main/')) {
+            const categoryPath = href.split('tree/main/')[1];
+            let categoryKey = null;
+            
+            if (categoryPath === 'HTB') categoryKey = 'HTB';
+            else if (categoryPath === 'THM') categoryKey = 'THM';
+            else if (categoryPath === 'RE') categoryKey = 'RE';
+            else if (categoryPath.startsWith('MALWARE')) categoryKey = 'MALWARE';
+            else if (categoryPath === 'CYBERSTUDENTS') categoryKey = 'CYBERSTUDENTS';
+            
+            if (categoryKey) {
+                card.onclick = (e) => {
+                    e.preventDefault();
+                    showCategoryView(categoryKey);
+                    return false;
+                };
+                card.removeAttribute('target');
+            }
+        }
+    });
+}
+
+// Initialize content system
+loadContentStructure().then(() => {
+    setupDynamicCards();
+});
+
+// Make functions globally available
+window.showCategoryView = showCategoryView;
+window.showWriteup = showWriteup;
+window.returnToHome = returnToHome;
