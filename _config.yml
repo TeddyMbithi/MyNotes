@@ -1,4 +1,5 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
 title: CTF Writeups & Notes
 description: Cybersecurity notes, CTF writeups, and malware analysis by TeddyMbithi
 show_downloads: true
+logo: https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png
